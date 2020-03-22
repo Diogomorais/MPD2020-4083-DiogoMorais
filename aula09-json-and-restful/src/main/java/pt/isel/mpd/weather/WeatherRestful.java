@@ -60,11 +60,12 @@ public class WeatherRestful implements  WeatherApi  {
     }
 
     private static WeatherInfo toPastWeather(PastWeatherDataWeatherDto dto){
+        int idx = 0;
         return new WeatherInfo(
                 LocalDate.parse(dto.getDate()),
-                dto.getHourly()[0].getTempC(),
-                dto.getHourly()[0].getPrecipMM(),
-                dto.getHourly()[0].getWeatherDesc()
+                dto.getHourly()[idx].getTempC(),
+                dto.getHourly()[idx].getPrecipMM(),
+                dto.getHourly()[idx++].getWeatherDesc()
         );
 
     }

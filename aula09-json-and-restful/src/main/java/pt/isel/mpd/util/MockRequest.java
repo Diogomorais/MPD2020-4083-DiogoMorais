@@ -9,7 +9,7 @@ public class MockRequest extends AbstractRequest {
             .replace(',', '_')
             .replace('=', '_')
             .replace('?', '_')
-            .substring(45,115);
+            .substring(45,path.length());
         path += ".json";
         return ClassLoader.getSystemClassLoader().getResourceAsStream(path);
     }
